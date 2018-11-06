@@ -58,7 +58,7 @@ class InteractiveRecord
     attribute.each {|key, value| hash[key] = value
     k = key}
     sql = "SELECT * FROM #{self.table_name} WHERE ? = '#{hash[key]}'"
-    DB[:conn].execute(sql, key)
+    DB[:conn].execute(sql, k)
   end
 
 end
