@@ -56,8 +56,8 @@ class InteractiveRecord
   def self.find_by(attribute)
     hash = {}
     attribute.each {|key, value| hash[:"#{key}"] = value}
-    array = hash.keys
-    sql = "SELECT * FROM #{self.table_name} WHERE #{array[0].to_s} = '#{hash[array[0]]}'"
+    key = hash.keys
+    sql = "SELECT * FROM #{self.table_name} WHERE #{key[0].to_s} = '#{hash[array[0]]}'"
     DB[:conn].execute(sql)
   end
 
