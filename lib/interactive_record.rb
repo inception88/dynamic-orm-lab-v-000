@@ -60,7 +60,7 @@ class InteractiveRecord
 #    sql = "SELECT * FROM #{self.table_name} WHERE ? = '#{hash[array[0]]}'"
 # => , array[0].to_s
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{hash[array[0]]}'"
-    DB[:conn].execute(sql, hash[array[0]])
+    DB[:conn].execute(sql)
   end
 
 end
